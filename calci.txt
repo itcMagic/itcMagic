@@ -1,0 +1,144 @@
+import java.util.Scanner;
+
+public class calculator {
+int no1,no2,result;
+
+void setValues (int no1,int no2)
+{
+this.no1=no1;
+this.no2=no2;
+}
+int add()
+{
+return no1+no2;
+}
+int subtract()
+{
+return no1-no2;
+}
+int multiply()
+{
+return no1*no2;
+}
+int divide()
+{
+return no1/no2;
+}
+int factorial()
+{
+int i;
+result = 1;
+for(i=1;i<=no1;++i)
+{
+result*=i;
+
+}
+return result;
+}
+}
+
+import java.util.Scanner;
+
+public class CalculatorMain {
+
+public static void main(String[] args) {
+
+Scanner in= new Scanner(System.in);
+
+int choice;
+int no1,no2,result;
+
+calculator obj = new calculator();
+
+do {
+System.out.println("1.Add");
+System.out.println("2.Subtract");
+System.out.println("3.Multiply");
+System.out.println("4.Divide");
+System.out.println("5.Factorial");
+System.out.println("6.EXit");
+
+System.out.println("Enter your choice:");
+choice=in.nextInt();
+
+switch(choice) {
+case 1:
+System.out.println("Enter First Number");
+no1= in.nextInt();
+
+System.out.println("Enter second Number");
+no2=in.nextInt();
+obj.setValues(no1, no2);
+result= obj.add();
+
+System.out.println("Addition :" +result);
+System.out.println("=========================================================");
+break;
+
+case 2:
+System.out.println("Enter First Number");
+no1= in.nextInt();
+
+System.out.println("Enter Second Number");
+no2= in.nextInt();
+
+obj.setValues(no1, no2);
+result= obj.subtract();
+
+System.out.println("Subtraction :" +result);
+System.out.println("=========================================================");
+break;
+
+case 3:
+System.out.println("Enter First Number");
+no1= in.nextInt();
+
+System.out.println("Enter Second Number");
+no2= in.nextInt();
+
+obj.setValues(no1, no2);
+result= obj.multiply();
+
+System.out.println("Multiplication :" +result);
+System.out.println("=========================================================");
+break;
+
+case 4:
+System.out.println("Enter First Number");
+no1= in.nextInt();
+
+System.out.println("Enter Second Number");
+no2= in.nextInt();
+
+obj.setValues(no1, no2);
+result= obj.divide();
+
+System.out.println("Division :" +result);
+System.out.println("=========================================================");
+break;
+
+case 5:
+System.out.println("Enter Number:");
+no1= in.nextInt();
+
+obj.setValues(no1, no1);
+result= obj.factorial();
+
+System.out.println("Factorial of" +no1 +"is " +result);
+System.out.println("=========================================================");
+break;
+
+case 6:
+System.out.println("Terminating");
+System.out.println("=========================================================");
+break;
+default:
+System.out.println("Wrong choice");
+System.out.println("=========================================================");
+break;
+
+}
+}while(choice != 6);
+}
+
+}
